@@ -1,6 +1,6 @@
 <template>
-  <div v-if="hasError" class="absolute text-sm text-red-500 -bottom-6"
-     v-html="errorMessage"></div>
+  <div v-if="hasError" class="text-sm text-red-500 -bottom-3"
+       v-html="errorMessage"></div>
 </template>
 
 <script>
@@ -17,10 +17,10 @@ export default {
     }
   },
   computed: {
-    hasError () {
+    hasError() {
       return this.form.errors.has(this.field)
     },
-    errorMessage () {
+    errorMessage() {
       if (this.hasError) {
         return this.form.errors.get(this.field)
       }

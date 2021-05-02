@@ -1,5 +1,5 @@
 <template>
-  <div class="relative mb-6">
+  <div class="relative mb-3">
     <label v-if="label" :for="id?id:name" class="text-gray-700">
       {{ label }}
       <span class="text-red-500 required-dot" v-if="required">*</span>
@@ -38,3 +38,4 @@ export default {
   }
 }
 </script>
+
