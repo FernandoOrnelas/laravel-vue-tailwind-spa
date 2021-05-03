@@ -7,7 +7,7 @@ const tailwindcss = require('tailwindcss');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 mix
-  .js('resources/js/app.js', 'public/dist/js')
+  .js('resources/js/app.js', 'public/dist/js').vue()
   .sass('resources/sass/app.scss', 'public/dist/css')
   .options({
     processCssUrls: false,
@@ -37,9 +37,7 @@ mix.webpackConfig({
   },
   output: {
     chunkFilename: 'dist/js/[chunkhash].js',
-    path: mix.config.hmr
-      ? '/'
-      : path.resolve(__dirname, mix.inProduction() ? './public/build' : './public')
+    path: path.resolve(__dirname, mix.inProduction() ? './public/build' : './public')
   }
 })
 
